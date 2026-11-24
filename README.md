@@ -324,4 +324,4 @@ Available targets:
 
 Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
-This module is derived from Cloud Posse's [terraform-aws-s3-bucket](https://github.com/cloudposse/terraform-aws-s3-bucket).
+Copyright 2026 Raring Group LLC. This module is derived from Cloud Posse's [terraform-aws-s3-bucket](https://github.com/cloudposse/terraform-aws-s3-bucket), Copyright 2019-2023 Cloud Posse, LLC.

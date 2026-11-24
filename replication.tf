@@ -1,5 +1,6 @@
 ## ----------------------------------------------------------------------------
 ## Copyright 2026 Raring Group LLC
+## Copyright 2019-2023 Cloud Posse, LLC
 ##
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.
@@ -12,6 +13,8 @@
 ## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ## See the License for the specific language governing permissions and
 ## limitations under the License.
+##
+## Modified from terraform-aws-s3-bucket (https://github.com/cloudposse/terraform-aws-s3-bucket) by Raring Group LLC.
 ## ----------------------------------------------------------------------------
 
 resource "aws_iam_role" "replication" {
