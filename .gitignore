@@ -18,3 +18,9 @@ build-harness
 *.orig
 *.draft
 *~
+
+# Additional ignores
+*.tfstate.backup
+crash.log
+test.log
+.DS_Store
