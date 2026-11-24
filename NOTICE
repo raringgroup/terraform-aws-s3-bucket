@@ -1,0 +1,10 @@
+terraform-aws-s3-bucket
+Copyright 2026 Raring Group LLC
+
+This product includes software developed by Raring Group LLC (https://github.com/raringgroup).
+
+Portions of this software are derived from terraform-aws-s3-bucket (https://github.com/cloudposse/terraform-aws-s3-bucket),
+Copyright 2019-2023 Cloud Posse, LLC, licensed under the Apache License, Version 2.0.
+The _context.tf files are derived from terraform-null-label (https://github.com/cloudposse/terraform-null-label),
+Copyright 2019-2023 Cloud Posse, LLC, licensed under the Apache License, Version 2.0.
+Modifications by Raring Group LLC: adapted for the Raring Group context module (terraform-null-context), renamed and re-sourced.
