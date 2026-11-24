@@ -34,7 +34,7 @@ data "aws_iam_policy_document" "deployment_iam_policy" {
   statement {
     actions   = var.privileged_principal_actions
     effect    = "Allow"
-    resources = ["arn:aws:s3:::${module.this.id}*"]
+    resources = ["arn:aws:s3:::${module.context.id}*"]
   }
 }
 
@@ -45,40 +45,38 @@ resource "aws_iam_policy" "deployment_iam_policy" {
 }
 
 module "deployment_principal_label" {
-  source  = "cloudposse/label/null"
-  version = "0.25.0"
+  source = "git::https://github.com/raringgroup/terraform-null-context.git?ref=v0.1.0"
 
   enabled = var.privileged_principal_enabled
 
   attributes = ["deployment"]
 
-  context = module.this.context
+  context = module.context.self
 }
 
 resource "aws_iam_role" "deployment_iam_role" {
   count = var.privileged_principal_enabled ? 1 : 0
 
-  name               = join("", module.deployment_principal_label.*.id)
+  name               = join("", module.deployment_principal_label.id)
   assume_role_policy = join("", data.aws_iam_policy_document.deployment_assume_role.*.json)
 
   tags = module.deployment_principal_label.tags
 }
 
 module "additional_deployment_principal_label" {
-  source  = "cloudposse/label/null"
-  version = "0.25.0"
+  source = "git::https://github.com/raringgroup/terraform-null-context.git?ref=v0.1.0"
 
   enabled = var.privileged_principal_enabled
 
   attributes = ["deployment", "additional"]
 
-  context = module.this.context
+  context = module.context.self
 }
 
 resource "aws_iam_role" "additional_deployment_iam_role" {
   count = var.privileged_principal_enabled ? 1 : 0
 
-  name               = join("", module.additional_deployment_principal_label.*.id)
+  name               = join("", module.additional_deployment_principal_label.id)
   assume_role_policy = join("", data.aws_iam_policy_document.deployment_assume_role.*.json)
 
   tags = module.additional_deployment_principal_label.tags

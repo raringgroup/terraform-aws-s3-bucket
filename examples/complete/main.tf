@@ -28,5 +28,5 @@ module "s3_bucket" {
   transfer_acceleration_enabled = true
   bucket_key_enabled            = var.bucket_key_enabled
 
-  context = module.this.context
+  context = module.context.self
 }

@@ -101,12 +101,6 @@ variable "source_policy_documents" {
   description = "List of IAM policy documents that are merged together into the exported document. Statements defined in source_policy_documents or source_json must have unique sids. Statements with the same sid from documents assigned to the override_json and override_policy_documents arguments will override source statements."
 }
 
-variable "region" {
-  type        = string
-  default     = ""
-  description = "If specified, the AWS region this bucket should reside in. Otherwise, the region used by the callee"
-}
-
 variable "force_destroy" {
   type        = bool
   default     = false

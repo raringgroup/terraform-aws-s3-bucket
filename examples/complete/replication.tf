@@ -42,7 +42,7 @@ module "s3_bucket_replication_target" {
   s3_replication_source_roles = [module.s3_bucket.replication_role_arn]
 
   attributes = ["target"]
-  context    = module.this.context
+  context    = module.context.self
 }
 
 module "s3_bucket_replication_target_extra" {
@@ -57,5 +57,5 @@ module "s3_bucket_replication_target_extra" {
   s3_replication_source_roles = [module.s3_bucket.replication_role_arn]
 
   attributes = ["target", "extra"]
-  context    = module.this.context
+  context    = module.context.self
 }
